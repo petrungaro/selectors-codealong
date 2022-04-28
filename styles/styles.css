@@ -77,3 +77,52 @@ Dark Green - #1f2d2e
 Light Green - #234534
 Orange - #ED6B55
  */
+
+.toggle-label {
+    line-height: 40px;
+    padding-right: 100px;
+    margin: 15px 0;
+    position: relative;
+    cursor: pointer;
+    
+}
+
+.toggle-label::before {
+    content: '';
+    width: 80px;
+    height: 40px;
+    background-color: #1f2d2e;
+    border-radius: 20px;
+    display: block;
+    position: absolute;
+    right: 0px;
+    transition: all .5s;
+}
+
+.toggle-label::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    right: 45px;
+    top: 5px;
+    transition: all .5s;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked + .toggle-label::after {
+    /* right: 5px; */
+    transform: translateX(40px);
+    
+}
+
+input[type="checkbox"]:checked + .toggle-label::before {
+    background-color: #ED6B55;
+}
